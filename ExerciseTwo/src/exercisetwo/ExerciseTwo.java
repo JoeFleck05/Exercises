@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package exerciseone;
+package exercisetwo;
 
 import java.util.Arrays;
 
@@ -11,7 +11,7 @@ import java.util.Arrays;
  *
  * @author josephfleck
  */
-public class ExerciseOne {
+public class ExerciseTwo {
 
     /**
      * @param args the command line arguments
@@ -20,18 +20,17 @@ public class ExerciseOne {
         // TODO code application logic here
     }
     
-    public int[] returnOrder(int[] n) {
+    public int[] returnValue(int[] numberArray) {
+        int number = 0;
+        int[] returnArray = new int[numberArray.length];
+        int starter = numberArray.length - 1;
+        Arrays.sort(numberArray);
         
-        int numberOne = n.length - 1;
-        int[] returnValueOrder = new int[n.length];
-        int numberTwo = 0;
-        Arrays.sort(n);
-      
-        for(int i = numberOne ; i >= 0 ; --i) {
-            returnValueOrder[numberTwo] = n[i];
-            numberTwo += 1;
+        for(int i = starter ; i >= 0 ; --i ) {
+            returnArray[number] = numberArray[i];
+            number += 1;
         }
-        return returnValueOrder;
+        return returnArray;
     }
     
 }

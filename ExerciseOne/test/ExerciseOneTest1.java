@@ -21,6 +21,9 @@ public class ExerciseOneTest1 {
     private final int[] ORDER = {98,21,32,43,9};
     private final int[] EXPECTED = {98,43,32,21,9};
     
+    private final int[] ORDER_STARTER = {98,21,32};
+    private final int[] EXPECTED_ENDING = {98,32,21};
+    
     public ExerciseOneTest1() {
     }
     
@@ -29,5 +32,8 @@ public class ExerciseOneTest1 {
     
     @Test
     public void testTwo(){ assertArrayEquals(EXPECTED, e.returnOrder(ORDER)); }
+    
+    @Test
+    public void testThree(){ assertArrayEquals(EXPECTED_ENDING, e.returnOrder(ORDER_STARTER)); }
     
 }
