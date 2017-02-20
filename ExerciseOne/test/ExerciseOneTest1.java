@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 
+import exerciseone.ExerciseOne;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -13,7 +14,20 @@ import static org.junit.Assert.*;
  */
 public class ExerciseOneTest1 {
     
+    ExerciseOne e = new ExerciseOne();
+    private final int[] STARTING_ORDER = {99,21,56,104,56,12,1,88,1007};
+    private final int[] EXPECTED_ORDER = {1007,104,99,88,56,56,21,12,1};
+    
+    private final int[] ORDER = {98,21,32,43,9};
+    private final int[] EXPECTED = {98,43,32,21,9};
+    
     public ExerciseOneTest1() {
     }
+    
+    @Test
+    public void testOne() {assertArrayEquals(EXPECTED_ORDER,e.returnOrder(STARTING_ORDER));}
+    
+    @Test
+    public void testTwo(){ assertArrayEquals(EXPECTED, e.returnOrder(ORDER)); }
     
 }

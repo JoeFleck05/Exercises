@@ -5,6 +5,8 @@
  */
 package exerciseone;
 
+import java.util.Arrays;
+
 /**
  *
  * @author josephfleck
@@ -16,6 +18,20 @@ public class ExerciseOne {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+    }
+    
+    public int[] returnOrder(int[] n) {
+        
+        int numberOne = n.length - 1;
+        int[] returnValueOrder = new int[numberOne + 1];
+        int numberTwo = 0;
+        Arrays.sort(n);
+      
+        for(int i = numberOne ; i >= 0 ; --i) {
+            returnValueOrder[numberTwo] = n[i];
+            numberTwo += 1;
+        }
+        return returnValueOrder;
     }
     
 }
