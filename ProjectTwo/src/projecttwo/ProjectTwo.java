@@ -43,7 +43,7 @@ public class ProjectTwo {
             }
         }
         
-        // create arraylist with hashmap set
+        // create arraylist with hashmap keyset
         ArrayList<String> keyNames = new ArrayList<String>(frequencyMap.keySet());
 
         // sort arraylist by hashmap set
