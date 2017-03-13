@@ -63,8 +63,22 @@ public class ProjectTwoPointTwo {
           
       Arrays.sort(intTempArray);
       
+        reverseIntArray(intTempArray);
+      
       
       return finalArray;
+    }
+    
+    public int[] reverseIntArray(int[] numArray) {
+        int startingPoint = numArray.length - 1;
+        int positionNumber = 0;
+        int[] returnNumArray = new int[numArray.length];
+        
+        for(int i = startingPoint ; i >= 0 ; --i) {
+            System.out.println(i);
+        }
+        
+        return returnNumArray;
     }
     
 }
