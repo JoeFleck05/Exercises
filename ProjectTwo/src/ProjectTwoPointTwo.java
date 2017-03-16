@@ -35,8 +35,6 @@ public class ProjectTwoPointTwo {
       ArrayList<String> tempKeyArrayList = new ArrayList<>(tempHash.keySet());
       // create arraylist with hashmap size
       ArrayList<String> tempValueArrayList = new ArrayList<String>(tempHash.size());
-      // Creating new int 
-      int aNumber = 0;
       
       // Loop thru ArrayList of Keys to combine key and value into it
       for(String keyList : tempKeyArrayList) {
@@ -50,23 +48,40 @@ public class ProjectTwoPointTwo {
       String[] stringKeyArray;
       // Create temp int array for value
       int[] intTempArray = new int[tempValueArrayList.size()];
-      String[] tempStringArray = new String[tempValueArrayList.size()];
-      finalArray = new String[tempValueArrayList.size()];
+      String[] finalReturnArray = new String[tempValueArrayList.size()];
+      String[] stringArray = new String[tempValueArrayList.size()];
+      // Creating new int 
+      int aNumber = 0;
       
       // Loop thru tempValueArrayList to retrieve value
       for(int i = tempValueArrayList.size() - 1 ; i >= 0 ; --i) {
-          tempStringArray[aNumber] = tempValueArrayList.get(i);
-          stringKeyArray = tempStringArray[aNumber].split(" ");
+          stringArray[aNumber] = tempValueArrayList.get(i);
+          stringKeyArray = stringArray[aNumber].split(" ");
           intTempArray[aNumber] = Integer.parseInt(stringKeyArray[1]);
           ++aNumber;
       }
           
       Arrays.sort(intTempArray);
       
-        reverseIntArray(intTempArray);
+      int[] theArray = reverseIntArray(intTempArray);
+      int startHere = 0;
+      int thisNumber = 0;
       
+      // outer loop using the int[] array created by the reverseIntArray method
+      for(int numArray : theArray){
+          // inner loop driven value array to to if tempValueArrayList contains numArray
+          for(int i = startHere ; i <= tempValueArrayList.size() - 1 ; ++i){
+              if(tempValueArrayList.get(i).contains(Integer.toString(numArray))){
+                  finalReturnArray[thisNumber] = tempValueArrayList.get(i);
+                  tempValueArrayList.remove(i);
+                  thisNumber += 1;
+                  startHere = 0;
+                  break;
+              }
+          }
+      }
       
-      return finalArray;
+      return finalReturnArray;
     }
     
     public int[] reverseIntArray(int[] numArray) {
@@ -75,7 +90,8 @@ public class ProjectTwoPointTwo {
         int[] returnNumArray = new int[numArray.length];
         
         for(int i = startingPoint ; i >= 0 ; --i) {
-            System.out.println(i);
+            returnNumArray[positionNumber] = numArray[i];
+            positionNumber += 1;
         }
         
         return returnNumArray;

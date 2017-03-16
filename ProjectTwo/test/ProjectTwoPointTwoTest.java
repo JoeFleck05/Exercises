@@ -15,7 +15,7 @@ public class ProjectTwoPointTwoTest {
     ProjectTwoPointTwo pp = new ProjectTwoPointTwo();
     
     private final String[] VALUE_LIST = {"Joe","Joe","Nathan","Nate"};
-    private final String[] EXPECTED_LIST = {"Joe","Joe","Nathan","Nate"};
+    private final String[] EXPECTED_LIST = {"Joe 2","Nate 1","Nathan 1"};
     
     public ProjectTwoPointTwoTest() {
     }
