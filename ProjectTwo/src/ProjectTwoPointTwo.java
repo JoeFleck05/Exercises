@@ -17,9 +17,7 @@ import java.util.HashMap;
  */
 public class ProjectTwoPointTwo {
     
-    public String[] Execrise2(String[] valueList) {
-      String[] finalArray = null;
-      
+    public String[] Execrise2(String[] valueList) {      
       // create new HashMap
       HashMap<String, Integer> tempHash = new HashMap<String, Integer>();
       // add array to hashmap
